@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.10 on darwin)" generated="20230124 13:52:46.716" rpa="false" schemaversion="3">
+<suite id="s1" name="Bonito" source="/Users/jagodajeczmien-lazur/dev/python/workspace/bonito_robot/Tests/Bonito.robot">
+<test id="s1-t1" name="Logged out user can search for products" line="14">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230124 13:52:46.806" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230124 13:52:46.806" endtime="20230124 13:52:53.728"/>
+</kw>
+<status status="PASS" starttime="20230124 13:52:46.806" endtime="20230124 13:52:53.728"/>
+</kw>
+<kw name="Search for Products" library="BonitoApp">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230124 13:52:53.729" level="INFO">Opening url 'https://bonito.pl/'</msg>
+<status status="PASS" starttime="20230124 13:52:53.729" endtime="20230124 13:53:04.582"/>
+</kw>
+<status status="PASS" starttime="20230124 13:52:53.729" endtime="20230124 13:53:04.582"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Polecamy</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:53:04.583" endtime="20230124 13:53:04.934"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:04.583" endtime="20230124 13:53:04.934"/>
+</kw>
+<kw name="Search for Products" library="TopNav">
+<kw name="Enter Search Term" library="TopNav">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TOPNAV_SEARCH_BAR}</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230124 13:53:04.935" level="INFO">Typing text 'Harry Potter and the Chamber of Secrets. Gryffindor Edition' into text field 'id=headerSearchInput'.</msg>
+<status status="PASS" starttime="20230124 13:53:04.934" endtime="20230124 13:53:07.448"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:04.934" endtime="20230124 13:53:07.448"/>
+</kw>
+<kw name="Submit Search" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:53:07.449" level="INFO">Clicking element 'xpath=//*[@id="searchField"]/img'.</msg>
+<status status="PASS" starttime="20230124 13:53:07.449" endtime="20230124 13:53:13.619"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:07.448" endtime="20230124 13:53:13.619"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:04.934" endtime="20230124 13:53:13.619"/>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wyniki wyszukiwania „Harry Potter and the Chamber of Secrets. Gryffindor Edition”</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:53:13.619" endtime="20230124 13:53:13.635"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:13.619" endtime="20230124 13:53:13.636"/>
+</kw>
+<status status="PASS" starttime="20230124 13:52:53.728" endtime="20230124 13:53:13.636"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230124 13:53:13.636" endtime="20230124 13:53:13.738"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:13.636" endtime="20230124 13:53:13.738"/>
+</kw>
+<tag>Current</tag>
+<status status="PASS" starttime="20230124 13:52:46.806" endtime="20230124 13:53:13.738"/>
+</test>
+<test id="s1-t2" name="Logged out user can view a product" line="18">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230124 13:53:13.739" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230124 13:53:13.738" endtime="20230124 13:53:19.128"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:13.738" endtime="20230124 13:53:19.128"/>
+</kw>
+<kw name="Search for Products" library="BonitoApp">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230124 13:53:19.129" level="INFO">Opening url 'https://bonito.pl/'</msg>
+<status status="PASS" starttime="20230124 13:53:19.129" endtime="20230124 13:53:27.253"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:19.129" endtime="20230124 13:53:27.253"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Polecamy</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:53:27.253" endtime="20230124 13:53:27.616"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:27.253" endtime="20230124 13:53:27.616"/>
+</kw>
+<kw name="Search for Products" library="TopNav">
+<kw name="Enter Search Term" library="TopNav">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TOPNAV_SEARCH_BAR}</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230124 13:53:27.617" level="INFO">Typing text 'Harry Potter and the Chamber of Secrets. Gryffindor Edition' into text field 'id=headerSearchInput'.</msg>
+<status status="PASS" starttime="20230124 13:53:27.617" endtime="20230124 13:53:31.030"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:27.616" endtime="20230124 13:53:31.030"/>
+</kw>
+<kw name="Submit Search" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:53:31.030" level="INFO">Clicking element 'xpath=//*[@id="searchField"]/img'.</msg>
+<status status="PASS" starttime="20230124 13:53:31.030" endtime="20230124 13:53:37.733"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:31.030" endtime="20230124 13:53:37.733"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:27.616" endtime="20230124 13:53:37.733"/>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wyniki wyszukiwania „Harry Potter and the Chamber of Secrets. Gryffindor Edition”</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:53:37.734" endtime="20230124 13:53:37.748"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:37.733" endtime="20230124 13:53:37.749"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:19.129" endtime="20230124 13:53:37.749"/>
+</kw>
+<kw name="Select Product from Search Results" library="BonitoApp">
+<kw name="Click Product Link" library="SearchResults">
+<doc>Clicks on the first product in the search results list</doc>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath = //*[@id="results0"]/div/div/div[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230124 13:53:37.749" level="INFO">Clicking link 'xpath = //*[@id="results0"]/div/div/div[2]/a'.</msg>
+<status status="PASS" starttime="20230124 13:53:37.749" endtime="20230124 13:53:43.629"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:37.749" endtime="20230124 13:53:43.629"/>
+</kw>
+<kw name="Verify Page Loaded" library="Product">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wyślemy jeszcze dzisiaj</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:53:43.630" endtime="20230124 13:53:43.648"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:43.630" endtime="20230124 13:53:43.649"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:37.749" endtime="20230124 13:53:43.649"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230124 13:53:43.649" endtime="20230124 13:53:43.731"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:43.649" endtime="20230124 13:53:43.732"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:13.738" endtime="20230124 13:53:43.732"/>
+</test>
+<test id="s1-t3" name="Logged out user can add product to cart" line="22">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230124 13:53:43.733" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230124 13:53:43.732" endtime="20230124 13:53:48.598"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:43.732" endtime="20230124 13:53:48.598"/>
+</kw>
+<kw name="Search for Products" library="BonitoApp">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230124 13:53:48.599" level="INFO">Opening url 'https://bonito.pl/'</msg>
+<status status="PASS" starttime="20230124 13:53:48.599" endtime="20230124 13:53:58.658"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:48.598" endtime="20230124 13:53:58.659"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Polecamy</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:53:58.659" endtime="20230124 13:53:58.879"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:58.659" endtime="20230124 13:53:58.879"/>
+</kw>
+<kw name="Search for Products" library="TopNav">
+<kw name="Enter Search Term" library="TopNav">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TOPNAV_SEARCH_BAR}</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230124 13:53:58.880" level="INFO">Typing text 'Harry Potter and the Chamber of Secrets. Gryffindor Edition' into text field 'id=headerSearchInput'.</msg>
+<status status="PASS" starttime="20230124 13:53:58.880" endtime="20230124 13:54:00.880"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:58.879" endtime="20230124 13:54:00.880"/>
+</kw>
+<kw name="Submit Search" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:00.881" level="INFO">Clicking element 'xpath=//*[@id="searchField"]/img'.</msg>
+<status status="PASS" starttime="20230124 13:54:00.880" endtime="20230124 13:54:05.971"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:00.880" endtime="20230124 13:54:05.971"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:58.879" endtime="20230124 13:54:05.971"/>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wyniki wyszukiwania „Harry Potter and the Chamber of Secrets. Gryffindor Edition”</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:54:05.971" endtime="20230124 13:54:05.990"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:05.971" endtime="20230124 13:54:05.990"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:48.598" endtime="20230124 13:54:05.990"/>
+</kw>
+<kw name="Select Product from Search Results" library="BonitoApp">
+<kw name="Click Product Link" library="SearchResults">
+<doc>Clicks on the first product in the search results list</doc>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath = //*[@id="results0"]/div/div/div[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:05.991" level="INFO">Clicking link 'xpath = //*[@id="results0"]/div/div/div[2]/a'.</msg>
+<status status="PASS" starttime="20230124 13:54:05.991" endtime="20230124 13:54:11.421"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:05.991" endtime="20230124 13:54:11.421"/>
+</kw>
+<kw name="Verify Page Loaded" library="Product">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wyślemy jeszcze dzisiaj</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:54:11.421" endtime="20230124 13:54:11.507"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:11.421" endtime="20230124 13:54:11.507"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:05.991" endtime="20230124 13:54:11.507"/>
+</kw>
+<kw name="Add Product to Cart" library="BonitoApp">
+<kw name="Add to Cart" library="Product">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=body &gt; div.container.product_container &gt; div.row &gt; div.col-12.col-md-8.order-2 &gt; div:nth-child(3) &gt; div.col-12.col-md-12.col-lg-12.col-xl-7.pt-3 &gt; div &gt; div.d-flex.flex-column.flex-md-row.justify-content-center.justify-content-md-end.mt-4 &gt; div:nth-child(2) &gt; a &gt; div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:11.508" level="INFO">Clicking element 'css=body &gt; div.container.product_container &gt; div.row &gt; div.col-12.col-md-8.order-2 &gt; div:nth-child(3) &gt; div.col-12.col-md-12.col-lg-12.col-xl-7.pt-3 &gt; div &gt; div.d-flex.flex-column.flex-md-row.justify-content-center.justify-content-md-end.mt-4 &gt; div:nth-child(2) &gt; a &gt; div'.</msg>
+<status status="PASS" starttime="20230124 13:54:11.507" endtime="20230124 13:54:11.815"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:11.507" endtime="20230124 13:54:11.815"/>
+</kw>
+<kw name="Verify Product Added" library="Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="basketIcon"]/a/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:11.815" level="INFO">Clicking element 'xpath=//*[@id="basketIcon"]/a/img'.</msg>
+<status status="PASS" starttime="20230124 13:54:11.815" endtime="20230124 13:54:13.442"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Do zapłaty</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:54:13.442" endtime="20230124 13:54:13.453"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:11.815" endtime="20230124 13:54:13.453"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:11.507" endtime="20230124 13:54:13.453"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230124 13:54:13.454" endtime="20230124 13:54:13.545"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:13.454" endtime="20230124 13:54:13.545"/>
+</kw>
+<status status="PASS" starttime="20230124 13:53:43.732" endtime="20230124 13:54:13.545"/>
+</test>
+<test id="s1-t4" name="Logged out user check out" line="27">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230124 13:54:13.546" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230124 13:54:13.546" endtime="20230124 13:54:22.089"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:13.546" endtime="20230124 13:54:22.089"/>
+</kw>
+<kw name="Search for Products" library="BonitoApp">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230124 13:54:22.091" level="INFO">Opening url 'https://bonito.pl/'</msg>
+<status status="PASS" starttime="20230124 13:54:22.091" endtime="20230124 13:54:32.425"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:22.090" endtime="20230124 13:54:32.425"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Polecamy</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:54:32.425" endtime="20230124 13:54:32.782"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:32.425" endtime="20230124 13:54:32.782"/>
+</kw>
+<kw name="Search for Products" library="TopNav">
+<kw name="Enter Search Term" library="TopNav">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TOPNAV_SEARCH_BAR}</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:32.783" level="INFO">Typing text 'Harry Potter and the Chamber of Secrets. Gryffindor Edition' into text field 'id=headerSearchInput'.</msg>
+<status status="PASS" starttime="20230124 13:54:32.783" endtime="20230124 13:54:34.521"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:32.783" endtime="20230124 13:54:34.521"/>
+</kw>
+<kw name="Submit Search" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:34.522" level="INFO">Clicking element 'xpath=//*[@id="searchField"]/img'.</msg>
+<status status="PASS" starttime="20230124 13:54:34.521" endtime="20230124 13:54:40.071"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:34.521" endtime="20230124 13:54:40.071"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:32.782" endtime="20230124 13:54:40.071"/>
+</kw>
+<kw name="Verify Search Completed" library="SearchResults">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wyniki wyszukiwania „Harry Potter and the Chamber of Secrets. Gryffindor Edition”</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:54:40.071" endtime="20230124 13:54:40.089"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:40.071" endtime="20230124 13:54:40.089"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:22.089" endtime="20230124 13:54:40.089"/>
+</kw>
+<kw name="Select Product from Search Results" library="BonitoApp">
+<kw name="Click Product Link" library="SearchResults">
+<doc>Clicks on the first product in the search results list</doc>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath = //*[@id="results0"]/div/div/div[2]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:40.090" level="INFO">Clicking link 'xpath = //*[@id="results0"]/div/div/div[2]/a'.</msg>
+<status status="PASS" starttime="20230124 13:54:40.090" endtime="20230124 13:54:46.525"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:40.090" endtime="20230124 13:54:46.525"/>
+</kw>
+<kw name="Verify Page Loaded" library="Product">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wyślemy jeszcze dzisiaj</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:54:46.526" endtime="20230124 13:54:46.573"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:46.525" endtime="20230124 13:54:46.573"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:40.089" endtime="20230124 13:54:46.573"/>
+</kw>
+<kw name="Add Product to Cart" library="BonitoApp">
+<kw name="Add to Cart" library="Product">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=body &gt; div.container.product_container &gt; div.row &gt; div.col-12.col-md-8.order-2 &gt; div:nth-child(3) &gt; div.col-12.col-md-12.col-lg-12.col-xl-7.pt-3 &gt; div &gt; div.d-flex.flex-column.flex-md-row.justify-content-center.justify-content-md-end.mt-4 &gt; div:nth-child(2) &gt; a &gt; div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:46.574" level="INFO">Clicking element 'css=body &gt; div.container.product_container &gt; div.row &gt; div.col-12.col-md-8.order-2 &gt; div:nth-child(3) &gt; div.col-12.col-md-12.col-lg-12.col-xl-7.pt-3 &gt; div &gt; div.d-flex.flex-column.flex-md-row.justify-content-center.justify-content-md-end.mt-4 &gt; div:nth-child(2) &gt; a &gt; div'.</msg>
+<status status="PASS" starttime="20230124 13:54:46.574" endtime="20230124 13:54:46.986"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:46.573" endtime="20230124 13:54:46.986"/>
+</kw>
+<kw name="Verify Product Added" library="Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="basketIcon"]/a/img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:46.986" level="INFO">Clicking element 'xpath=//*[@id="basketIcon"]/a/img'.</msg>
+<status status="PASS" starttime="20230124 13:54:46.986" endtime="20230124 13:54:48.326"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Do zapłaty</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:54:48.326" endtime="20230124 13:54:48.370"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:46.986" endtime="20230124 13:54:48.371"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:46.573" endtime="20230124 13:54:48.371"/>
+</kw>
+<kw name="Begin Checkout" library="BonitoApp">
+<kw name="Proceed to Checkout" library="Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#basketForm &gt; div.container.p-3.pt-5 &gt; div &gt; div &gt; button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:54:48.371" level="INFO">Clicking element 'css=#basketForm &gt; div.container.p-3.pt-5 &gt; div &gt; div &gt; button'.</msg>
+<status status="PASS" starttime="20230124 13:54:48.371" endtime="20230124 13:54:50.937"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:48.371" endtime="20230124 13:54:50.938"/>
+</kw>
+<kw name="Verify Page Loaded" library="Buy">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Wybierz sposób dostawy</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:54:50.938" endtime="20230124 13:54:50.948"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:50.938" endtime="20230124 13:54:50.948"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:48.371" endtime="20230124 13:54:50.948"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230124 13:54:50.948" endtime="20230124 13:54:51.040"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:50.948" endtime="20230124 13:54:51.040"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:13.545" endtime="20230124 13:54:51.040"/>
+</test>
+<test id="s1-t5" name="User can log in" line="33">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230124 13:54:51.041" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230124 13:54:51.041" endtime="20230124 13:54:55.954"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:51.041" endtime="20230124 13:54:55.954"/>
+</kw>
+<kw name="Login" library="BonitoApp">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230124 13:54:55.955" level="INFO">Opening url 'https://bonito.pl/'</msg>
+<status status="PASS" starttime="20230124 13:54:55.955" endtime="20230124 13:55:05.919"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:55.955" endtime="20230124 13:55:05.919"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Polecamy</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:55:05.920" endtime="20230124 13:55:06.183"/>
+</kw>
+<status status="PASS" starttime="20230124 13:55:05.920" endtime="20230124 13:55:06.183"/>
+</kw>
+<kw name="Go to the login page" library="Logingpage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#topPosition &gt; div.w-100.m-0.p-0.d-flex.justify-content-center &gt; div &gt; div.row.d-flex.justify-content-start.justify-content-md-around.justify-content-lg-start.align-items-center.header.m-0 &gt; div.col-2.col-lg-1.order-3.order-md-last.order-lg-4.d-flex.justify-content-end.align-items-center.position-relative.my-2.mb-1 &gt; a &gt; img</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 13:55:06.184" level="INFO">Clicking element 'css=#topPosition &gt; div.w-100.m-0.p-0.d-flex.justify-content-center &gt; div &gt; div.row.d-flex.justify-content-start.justify-content-md-around.justify-content-lg-start.align-items-center.header.m-0 &gt; div.col-2.col-lg-1.order-3.order-md-last.order-lg-4.d-flex.justify-content-end.align-items-center.position-relative.my-2.mb-1 &gt; a &gt; img'.</msg>
+<status status="PASS" starttime="20230124 13:55:06.184" endtime="20230124 13:55:09.575"/>
+</kw>
+<status status="PASS" starttime="20230124 13:55:06.184" endtime="20230124 13:55:09.575"/>
+</kw>
+<kw name="Verify login page loaded" library="Logingpage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Zaloguj się</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:55:09.576" endtime="20230124 13:55:09.612"/>
+</kw>
+<status status="PASS" starttime="20230124 13:55:09.576" endtime="20230124 13:55:09.612"/>
+</kw>
+<kw name="Login With Valid Credentials" library="Logingpage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN_FIELD}</arg>
+<arg>${LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230124 13:55:09.612" level="INFO">Typing text 'Hedwiga_FromTesting' into text field 'id=accountLogInEmail'.</msg>
+<status status="PASS" starttime="20230124 13:55:09.612" endtime="20230124 13:55:10.541"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230124 13:55:10.542" level="INFO">Typing text 'Harrypassword5%' into text field 'id=accountLogInPassword'.</msg>
+<status status="PASS" starttime="20230124 13:55:10.541" endtime="20230124 13:55:10.891"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=body &gt; div:nth-child(4) &gt; form &gt; div &gt; div:nth-child(1) &gt; div.row &gt; div.col-12.col-lg-5.d-flex.justify-content-center.justify-content-lg-end &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230124 13:55:10.891" level="INFO">Clicking button 'css=body &gt; div:nth-child(4) &gt; form &gt; div &gt; div:nth-child(1) &gt; div.row &gt; div.col-12.col-lg-5.d-flex.justify-content-center.justify-content-lg-end &gt; button'.</msg>
+<status status="PASS" starttime="20230124 13:55:10.891" endtime="20230124 13:55:13.510"/>
+</kw>
+<status status="PASS" starttime="20230124 13:55:09.612" endtime="20230124 13:55:13.510"/>
+</kw>
+<kw name="Verify user logged in" library="Logingpage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dane osobowe</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230124 13:55:13.511" endtime="20230124 13:55:13.550"/>
+</kw>
+<status status="PASS" starttime="20230124 13:55:13.510" endtime="20230124 13:55:13.550"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:55.955" endtime="20230124 13:55:13.550"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230124 13:55:13.550" endtime="20230124 13:55:13.628"/>
+</kw>
+<status status="PASS" starttime="20230124 13:55:13.550" endtime="20230124 13:55:13.629"/>
+</kw>
+<status status="PASS" starttime="20230124 13:54:51.040" endtime="20230124 13:55:13.629"/>
+</test>
+<doc>This is some basic info about the whole suite</doc>
+<status status="PASS" starttime="20230124 13:52:46.717" endtime="20230124 13:55:13.629"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Current</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Bonito">Bonito</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
