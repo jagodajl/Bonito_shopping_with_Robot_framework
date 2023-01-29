@@ -1,4 +1,4 @@
-This project enables automatic shopping on the Bonito.pl website. It is based on the Robot Framework (source automation framework) with SeleniumLibrary (Web testing library that uses the popular Selenium tool). 
+This project enables automatic shopping on the Bonito.pl website. It is based on the Robot Framework (test automation framework) with SeleniumLibrary (Web testing library that uses the popular Selenium tool). 
 The application automatically performs the following actions:
 - opening a specific website in the browser
 - searching for products
